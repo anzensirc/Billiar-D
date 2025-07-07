@@ -1,5 +1,5 @@
 import { ApiResponse, DataObject } from "@/types";
-import { ProductFormPayload } from "./validation";
+import { MejaForm } from "./validation";
 import { fetcher, sendData } from "@/services/api/fetcher";
 import { useFormMutation } from "@/hooks/useFormMutation";
 import { useQuery } from "@tanstack/react-query";
@@ -41,18 +41,18 @@ export const useGetProductId = (id: number) => {
 // post
 export const useProduct = (method: "POST" | "PUT" = "POST", id?: number) => {
   return useFormMutation<
-    ApiResponse<DataObject<ProductFormPayload>>,
+    ApiResponse<DataObject<MejaForm>>,
     Error,
-    ProductFormPayload
+    MejaForm
   >({
     mutationFn: async (
       data
-    ): Promise<ApiResponse<DataObject<ProductFormPayload>>> => {
+    ): Promise<ApiResponse<DataObject<MejaForm>>> => {
       const endpoint = id
         ? `infrastruktur/${id}/update`
         : "infrastruktur/create";
       const delay = new Promise((resolve) => setTimeout(resolve, 2000));
-      const response: ApiResponse<DataObject<ProductFormPayload>> =
+      const response: ApiResponse<DataObject<MejaForm>> =
         await sendData(endpoint, data, method);
       await delay;
       return response;

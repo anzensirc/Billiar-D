@@ -1,7 +1,7 @@
 // app/products/page.tsx atau sesuai path-mu
 "use client";
 
-import { mejaColumns, mejaData } from "@/components/parts/admin/manajemen-meja/column";
+import { mejaColumns, mejaData } from "@/components/parts/admin/kelolaMeja/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";

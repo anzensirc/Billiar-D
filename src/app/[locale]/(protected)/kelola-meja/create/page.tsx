@@ -1,8 +1,8 @@
 "use client";
 
 
-import { useProduct } from "@/components/parts/admin/manajemen-meja/api";
-import { ProductFormPayload, productFormSchema } from "@/components/parts/admin/manajemen-meja/validation";
+import { useProduct } from "@/components/parts/admin/kelolaMeja/api";
+import { MejaForm, MejaFormSchema } from "@/components/parts/admin/kelolaMeja/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";
@@ -15,18 +15,18 @@ import { useForm } from "react-hook-form";
 const CreateProductPage = () => {
   const router = useRouter();
   const createProductMutation = useProduct("POST");
-  const form = useForm<ProductFormPayload>({
-    resolver: zodResolver(productFormSchema),
+  const form = useForm<MejaForm>({
+    resolver: zodResolver(MejaFormSchema),
     defaultValues: {
-      name: "",
-      category: "",
+      table: "",
       price: "",
-      stock: "",
+      type: "",
+      description: "",
     },
   });
 
-  const onSubmit = (data: ProductFormPayload) => {
-    console.log("data", data);
+  const onSubmit = (data: MejaForm) => {
+    // console.log("data", data);
     // createProductMutation.mutate(data, {
     //     onSuccess: (data) => {
     //         router.push("/data-master/category-business");
@@ -52,30 +52,30 @@ const CreateProductPage = () => {
           <div className="">
             <h1 className="text-2xl font-bold mb-4">Tambah Produk</h1>
             <div className="space-y-3 mt-5">
-              <CustomFormInput<ProductFormPayload>
-                name="name"
-                label="Nama Produk"
-                placeholder="Masukkan Nama Produk"
+              <CustomFormInput<MejaForm>
+                name="table"
+                label="Nama Meja"
+                placeholder="Masukkan Nama Meja"
               />
-              <CustomFormSelect<ProductFormPayload>
-                name="category"
-                label="Kategori"
+              <CustomFormSelect<MejaForm>
+                name="type"
+                label="Tipe"
                 options={[
-                  { label: "Makanan", value: "makanan" },
-                  { label: "Minuman", value: "minuman" },
+                  { label: "Meja Besar", value: "mejabesar" },
+                  { label: "Meja Kecil", value: "mejakecil" },
                 ]}
               />
-              <CustomFormInput<ProductFormPayload>
+              <CustomFormInput<MejaForm>
                 name="price"
-                label="Harga Produk"
-                placeholder="Masukkan Harga Produk"
+                label="Harga Sewa Meja"
+                placeholder="Masukkan Harga Sewa Meja"
                 type="number"
               />
-              <CustomFormInput<ProductFormPayload>
-                name="stock"
-                label="Stok Produk"
-                placeholder="Masukkan Stok Produk"
-                type="number"
+              <CustomFormInput<MejaForm>
+                name="description"
+                label="Deskripsi"
+                placeholder="Masukkan Deskripsi Meja"
+                type="string"
               />
             </div>
             <div className="flex justify-center mt-6 gap-3">

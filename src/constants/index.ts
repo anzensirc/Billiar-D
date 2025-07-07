@@ -1,6 +1,5 @@
 import { NavItem } from "@/types";
-import { Dice1, DockIcon, LayoutDashboard, Table2 } from "lucide-react";
-
+import { Grid, FileText, CalendarX, Upload, DockIcon, LayoutDashboard, Table2, BookOpenCheck} from "lucide-react";
 export const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 export const REGION_URL = process.env.NEXT_PUBLIC_API_REGION;
 
@@ -10,7 +9,7 @@ type navDateType = {
 
 export const getNavData = (): navDateType => {
   return {
-    navItems: [
+    navItems: [ 
       {
         title: "Dashboard",
         url: "/dashboard",
@@ -52,11 +51,35 @@ export const getNavData = (): navDateType => {
       },
       // Uncomment if you want to add a dashboard link
       {
-        title: "Manajemen Meja",
-        url: "/manajemen-meja",
-        icon: Dice1,
+        title: "Kelola Meja",
+        url: "/kelola-meja",
+        icon: Grid,
         roles: ["admin", "superadmin", "user"],
       },
+      {
+        title: "Kelola Booking",
+        url: "/kelola-booking",
+        icon: BookOpenCheck,
+        roles: ["admin", "superadmin", "user"],
+      },
+      {
+        title: "Riwayat Transaksi",
+        url: "/riwayat-transaksi",
+        icon: FileText,
+        roles: ["admin", "superadmin", "user"],
+      },
+      {
+        title: "Kelola Baner",
+        url: "/kelola-banner",
+        icon: Upload,
+        roles: ["admin", "superadmin", "user"],
+      },
+      {
+        title: "Kelola Tutup",
+        url: "/kelola-tutup",
+        icon: CalendarX,
+        roles: ["admin", "superadmin", "user"],
+      }
     ],
   };
 };

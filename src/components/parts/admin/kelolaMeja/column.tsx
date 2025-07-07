@@ -9,18 +9,31 @@ import { MoreVerticalIcon } from "lucide-react";
 import Link from "next/link";
 import ModalDelete from "@/components/shared/modalDelete";
 
-export const bookingData = [
+export const mejaData = [
   {
     id: 1,
-    no : 1,
-    meja: "Produk A",
+    meja: "Meja Kecil 1",
     harga: 120102,
-    tipe: "sdadasnd",
-    deskripsi: "fnaihfaofja",
+    tipe: "Meja Kecil",
+    deskripsi: "Meja kecil pertama",
+  },
+  {
+    id: 1,
+    meja: "Meja Besar",
+    harga: 300000,
+    tipe: "Meja Besar",
+    deskripsi: "Apa ajalah asal ada deskripsi",
+  },
+  {
+    id: 3,
+    meja: "Meja Kecil 3",
+    harga: 120102,
+    tipe: "Meja Kecil",
+    deskripsi: "Meja kecil no 3 di dekat kasir",
   },
 ];
 
-export const bookingcolomns: ColumnDef<ProductResponse>[] = [
+export const mejaColumns: ColumnDef<ProductResponse>[] = [
   {
     accessorKey: "id",
     header: "ID",
@@ -48,7 +61,7 @@ export const bookingcolomns: ColumnDef<ProductResponse>[] = [
     cell: ({ row }) => row.original.deskripsi,
   },
   {
-    accessorKey: "action",
+    accessorKey: "aksi",
     header: "Aksi",
     cell: ({ row }) => (
       <DropdownMenu>

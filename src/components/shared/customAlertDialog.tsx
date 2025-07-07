@@ -82,11 +82,11 @@ const colorSchemes: Record<ColorSchemeType, ColorScheme> = {
     buttonBg: "bg-red-600 hover:bg-red-700",
   },
   info: {
-    header: "bg-blue-600",
-    icon: "bg-blue-600",
+    header: "bg-[#2657D8]",
+    icon: "bg-[#2657D8]",
     iconBg: "bg-blue-100",
     iconRing: "border-blue-300",
-    buttonBg: "bg-blue-600 hover:bg-blue-700",
+    buttonBg: "bg-[#2657D8] hover:bg-blue-700",
   },
   warning: {
     header: "bg-amber-500",
@@ -108,7 +108,7 @@ const defaultColorSchemeMapping = {
   success: "success" as ColorSchemeType,
   error: "error" as ColorSchemeType,
   info: "info" as ColorSchemeType,
-  confirm: "success" as ColorSchemeType,
+  confirm: "info" as ColorSchemeType,
   loading: "warning" as ColorSchemeType,
 };
 
