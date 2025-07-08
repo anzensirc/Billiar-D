@@ -21,7 +21,7 @@ export default function Payment() {
       return;
     }
     alert('Pembayaran dikonfirmasi!');
-    router.push('/payment/paymentdetail');    
+    router.push('/payment/detail');    
 };
 
   return (

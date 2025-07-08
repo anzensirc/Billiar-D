@@ -1,10 +1,10 @@
-// type ISODateString = `${number}-${number}-${number}`;
+type ISODateString = `${number}-${number}-${number}`;
 
-// interface ProductResponse {
-//   id: number;
-//   no: number;
-//   tanggalmulai: ISODateString;
-//   tanggalselesai: ISODateString;
-//   keterangan: string;
-//   aksi: string;
-// }
+interface TutupResponse {
+  id: number;
+  no: number;
+  tanggalmulai: ISODateString;
+  tanggalselesai: ISODateString;
+  keterangan: string;
+  aksi: string;
+}

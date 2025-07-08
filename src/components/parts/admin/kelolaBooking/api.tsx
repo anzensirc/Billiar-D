@@ -5,18 +5,18 @@ import { useFormMutation } from "@/hooks/useFormMutation";
 import { useQuery } from "@tanstack/react-query";
 
 // get
-const getProduct = async (
+const getBooking = async (
   query?: string
-): Promise<ApiResponse<ProductResponse[]>> => {
+): Promise<ApiResponse<BookingResponse[]>> => {
   return await fetcher(
     query ? `infrastruktur/get?${query}` : `infrastruktur/get`
   );
 };
 
-export const useGetProduct = (query?: string) => {
-  return useQuery<ApiResponse<ProductResponse[]>, Error>(
-    ["useGetProduct", query],
-    () => getProduct(query),
+export const useGetBooking = (query?: string) => {
+  return useQuery<ApiResponse<BookingResponse[]>, Error>(
+    ["useGetBooking", query],
+    () => getBooking(query),
     {
       keepPreviousData: true,
       refetchIntervalInBackground: true,
@@ -25,21 +25,21 @@ export const useGetProduct = (query?: string) => {
 };
 
 // get by id
-export const getProductId = async (
+export const getBookingId = async (
   id: number
-): Promise<ApiResponse<DataObject<ProductResponse>>> => {
+): Promise<ApiResponse<DataObject<BookingResponse>>> => {
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetProductId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<ProductResponse>>, Error>(
-    ["useGetProductId", id],
-    () => getProductId(id)
+export const useGetBookingId = (id: number) => {
+  return useQuery<ApiResponse<DataObject<BookingResponse>>, Error>(
+    ["useGetBookingId", id],
+    () => getBookingId(id)
   );
 };
 
 // post
-export const useProduct = (method: "POST" | "PUT" = "POST", id?: number) => {
+export const useBooking = (method: "POST" | "PUT" = "POST", id?: number) => {
   return useFormMutation<
     ApiResponse<DataObject<BookingFormPayload>>,
     Error,

@@ -28,10 +28,10 @@ export default function MejaManajemenPage() {
           },
         ]}
       />
-      <h1 className="text-2xl font-bold mb-4">Daftar Produk</h1>
+      <h1 className="text-2xl font-bold mb-4">Daftar Tutup Toko</h1>
       <div className="flex gap-2 items-center my-5">
         <Search name="search" />
-        <LinkButton title="Tambah Meja" link="/kelola-tutup/create" />
+        <LinkButton title="Tambah Tutup Toko" link="/kelola-tutup/create" />
       </div>
       <DataTable
         columns={tutupColumns}

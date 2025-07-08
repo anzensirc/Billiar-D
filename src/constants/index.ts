@@ -16,39 +16,39 @@ export const getNavData = (): navDateType => {
         icon: LayoutDashboard,
         roles: ["admin", "superadmin", "user"],
       },
-      {
-        title: "Form Input",
-        url: "/form-input",
-        icon: DockIcon,
-        roles: ["superadmin", "admin", "user"],
-        directLinkRoles: ["user"],
-        items: [
-          {
-            title: "Semua Input",
-            url: "/form-input/all",
-            roles: ["superadmin", "admin"],
-          },
-          {
-            title: "Surat",
-            url: "/form-input/letter",
-            roles: ["superadmin", "admin"],
-          },
-        ],
-      },
-      {
-        title: "Tables",
-        url: "/tables",
-        icon: Table2,
-        roles: ["superadmin", "admin", "user"],
-        directLinkRoles: ["user"],
-        items: [
-          {
-            title: "tables admin",
-            url: "/tables/admin",
-            roles: ["superadmin", "admin"],
-          },
-        ],
-      },
+      // {
+      //   title: "Form Input",
+      //   url: "/form-input",
+      //   icon: DockIcon,
+      //   roles: ["superadmin", "admin", "user"],
+      //   directLinkRoles: ["user"],
+      //   items: [
+      //     {
+      //       title: "Semua Input",
+      //       url: "/form-input/all",
+      //       roles: ["superadmin", "admin"],
+      //     },
+      //     {
+      //       title: "Surat",
+      //       url: "/form-input/letter",
+      //       roles: ["superadmin", "admin"],
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: "Tables",
+      //   url: "/tables",
+      //   icon: Table2,
+      //   roles: ["superadmin", "admin", "user"],
+      //   directLinkRoles: ["user"],
+      //   items: [
+      //     {
+      //       title: "tables admin",
+      //       url: "/tables/admin",
+      //       roles: ["superadmin", "admin"],
+      //     },
+      //   ],
+      // },
       // Uncomment if you want to add a dashboard link
       {
         title: "Kelola Meja",

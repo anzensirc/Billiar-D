@@ -1,4 +1,4 @@
-interface ProductResponse {
+interface TransactionResponse {
   id: number;
   no: number;
   no_transaksi: string;

@@ -32,51 +32,40 @@ export const transaksiData = [
   },
 ];
 
-export const transaksiColumns: ColumnDef<ProductResponse>[] = [
+export const transaksiColumns: ColumnDef<TransactionResponse>[] = [
   {
     accessorKey: "id",
     header: "ID",
     cell: ({ row }) => row.original.id,
   },
   {
-    accessorKey: "meja",
-    header: "Meja",
-    cell: ({ row }) => row.original.meja,
+    accessorKey: "no",
+    header: "No",
+    cell: ({ row }) => row.original.no,
   },
   {
-    accessorKey: "harga",
-    header: "Harga",
-    cell: ({ row }) =>
-      `Rp${Number(row.original.harga).toLocaleString("id-ID")}`,
+    accessorKey: "nama_pemesan",
+    header: "Nama Pemesan",
+    cell: ({ row }) => row.original.nama_pemesan,
   },
   {
-    accessorKey: "tipe",
+    accessorKey: "tanggal_booking",
     header: "Tipe",
-   cell: ({ row }) => row.original.tipe,
+   cell: ({ row }) => row.original.tanggal_booking,
   },
   {
-    accessorKey: "deskripsi",
+    accessorKey: "tanggal_transaksi",
     header: "Deskripsi",
-    cell: ({ row }) => row.original.deskripsi,
+    cell: ({ row }) => row.original.tanggal_transaksi,
   },
   {
-    accessorKey: "action",
-    header: "Aksi",
-    cell: ({ row }) => (
-      <DropdownMenu>
-        <DropdownMenuTrigger className="flex items-center justify-center w-[30px]">
-          <MoreVerticalIcon />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <Link href={`/tables/admin/edit/${row.original.id}`}>
-            <DropdownMenuItem className="cursor-pointer">Edit</DropdownMenuItem>
-          </Link>
-          <ModalDelete
-            endpoint={`infrastruktur/${row.original.id}/delete`}
-            queryKey="useGetSarana"
-          />
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
+    accessorKey: "total_bayar",
+    header: "Total Bayar",
+    cell: ({ row }) => row.original.total_bayar,
   },
+  {
+    accessorKey: "status_pembayaran",
+    header: "Status Pembayaran",
+    cell: ({ row }) => row.original.status_pembayaran,
+  }
 ];

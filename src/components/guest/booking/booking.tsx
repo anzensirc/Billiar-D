@@ -1,19 +1,21 @@
 'use client';
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function Booking() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const categoryFromQuery = searchParams.get('category');
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTableNumber, setSelectedTableNumber] = useState<number | null>(null);
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedSlots, setSelectedSlots] = useState<string[]>([]);
+
   const [showCategoryOptions, setShowCategoryOptions] = useState(false);
   const [showNumberOptions, setShowNumberOptions] = useState(false);
-
-  const [selectedDate, setSelectedDate] = useState('');
-  const [showDatePicker, setShowDatePicker] = useState(false);
 
   const slots = [
     { time: '12.00 - 13.00', status: 'Tersedia' },
@@ -34,21 +36,38 @@ export default function Booking() {
 
   const tableCategories = ['Meja Kecil', 'Meja Besar'];
   const tableNumbers = {
-    'Meja Kecil': [1, 2, 3, 4],
-    'Meja Besar': [1, 2],
+    'Meja Kecil': [1],
+    'Meja Besar': [1, 2, 3],
   };
 
-  // ✅ Biar kategori auto ke-set dari query
   useEffect(() => {
     if (categoryFromQuery) {
       setSelectedCategory(categoryFromQuery);
       setShowCategoryOptions(false);
-      setShowNumberOptions(true); // langsung buka opsi nomor meja
+      setShowNumberOptions(true);
     }
   }, [categoryFromQuery]);
 
+  const toggleSlot = (slotTime: string) => {
+    setSelectedSlots((prev) =>
+      prev.includes(slotTime)
+        ? prev.filter((time) => time !== slotTime)
+        : [...prev, slotTime]
+    );
+  };
+
+  const handleContinue = () => {
+    if (selectedCategory && selectedTableNumber && selectedDate && selectedSlots.length > 0) {
+      router.push(
+        `/payment?category=${selectedCategory}&table=${selectedTableNumber}&date=${selectedDate}&slots=${selectedSlots.join(',')}`
+      );
+    } else {
+      alert('Lengkapi kategori, meja, tanggal, dan minimal satu slot!');
+    }
+  };
+
   return (
-    <main className="px-8 py-12 flex flex-col lg:flex-row gap-12">
+    <main className="px-20 py-2 flex flex-col lg:flex-row gap-12">
       {/* Kiri: Detail meja */}
       <div className="flex-1">
         <h1 className="text-xl font-bold mb-4">
@@ -77,16 +96,16 @@ export default function Booking() {
 
       {/* Kanan: Pilih jadwal */}
       <div className="flex-1 relative">
-        {/* Pilih Kategori Meja */}
+        {/* Pilih Kategori */}
         <button
           onClick={() => {
             setShowCategoryOptions(!showCategoryOptions);
             setShowNumberOptions(false);
           }}
-          className="w-full bg-pink-300 text-gray-800 px-4 py-2 mb-2 rounded flex items-center justify-between"
+          className="w-full bg-[#ADD8E6] text-gray-800 px-4 py-2 mb-2 rounded flex items-center justify-between"
         >
           <span>{selectedCategory ? selectedCategory : 'Pilih Kategori Meja'}</span>
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 9l-7 7-7-7" />
           </svg>
         </button>
@@ -114,14 +133,14 @@ export default function Booking() {
         {selectedCategory && (
           <button
             onClick={() => setShowNumberOptions(!showNumberOptions)}
-            className="w-full bg-pink-300 text-gray-800 px-4 py-2 mb-4 rounded flex items-center justify-between"
+            className="w-full bg-[#ADD8E6] text-gray-800 px-4 py-2 mb-4 rounded flex items-center justify-between"
           >
             <span>
               {selectedTableNumber
                 ? `${selectedCategory}-${selectedTableNumber}`
                 : 'Pilih Nomor Meja'}
             </span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -145,77 +164,100 @@ export default function Booking() {
         )}
 
         {/* Pilih Tanggal */}
-        <div className="mb-4 flex justify-end">
-          <button
-            onClick={() => setShowDatePicker(!showDatePicker)}
-            className="bg-pink-300 text-gray-800 p-2 rounded"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 7V3M16 7V3M3 11h18M5 5h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
-            </svg>
-          </button>
+        <div className="mb-4">
+          <label className="block mb-1 font-semibold">Pilih Tanggal</label>
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="
+              w-full border border-black bg-[#ADD8E6] text-[#36454F]
+              p-2 rounded focus:border-[#87CEFA] focus:ring-2 focus:ring-[#E0F2F7]
+            "
+          />
         </div>
 
-        {showDatePicker && (
-          <div className="mb-4">
-            <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className="w-full border p-2 rounded"
-            />
-          </div>
+        {/* Tanggal terpilih */}
+        {selectedDate && (
+          <p className="font-medium mb-2">Tanggal Terpilih: {selectedDate}</p>
         )}
 
-        {/* Slot Waktu */}
+        {/* Slot waktu multi-select
         <div className="grid grid-cols-3 gap-4 mb-8">
-          {slots.map((slot, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col items-center justify-center p-4 rounded ${
-                slot.status === 'Booked' ? 'bg-gray-400' : 'bg-gray-200'
-              }`}
-            >
-              <button className="bg-gray-500 text-white rounded-full w-6 h-6 flex items-center justify-center mb-2">
-                +
-              </button>
-              <p className="text-sm">{slot.time}</p>
-              <p
-                className={`text-xs ${
-                  slot.status === 'Booked'
-                    ? 'text-red-600 font-semibold'
-                    : 'text-green-600 font-semibold'
+          {slots.map((slot, idx) => {
+            const isSelected = selectedSlots.includes(slot.time);
+            const isBooked = slot.status === 'Booked';
+            return (
+              <button
+                key={idx}
+                disabled={isBooked}
+                onClick={() => toggleSlot(slot.time)}
+                className={`flex flex-col items-center justify-center p-4 rounded ${
+                  isBooked
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : isSelected
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-gray-200 hover:bg-blue-200'
                 }`}
               >
-                {slot.status}
-              </p>
-            </div>
-          ))}
-        </div>
+                <p className="text-sm">{slot.time}</p>
+                <p
+                  className={`text-xs ${
+                    isBooked
+                      ? 'text-red-600 font-semibold'
+                      : 'text-green-600 font-semibold'
+                  }`}
+                >
+                  {slot.status}
+                </p>
+              </button>
+            );
+          })}
+        </div> */}
+<div className="grid grid-cols-3 gap-4 mb-8">
+  {slots.map((slot, idx) => {
+    const isSelected = selectedSlots.includes(slot.time);
+    const isBooked = slot.status === 'Booked';
 
-        <Link href="/payment" passHref>
-          <button className="
-            w-full 
-            bg-gray-800
-            text-white
-            px-4 py-3
-            rounded
-            transition
-            duration-200
-            hover:bg-gray-700
-            active:scale-95
-            active:bg-gray-900
-          ">
-            Lanjutkan Pembayaran
-          </button>
-        </Link>
-        
+    return (
+      <button
+        key={idx}
+        disabled={isBooked}
+        onClick={() => toggleSlot(slot.time)}
+        className={`flex flex-col items-center justify-center p-4 rounded ${
+          isBooked
+            ? 'bg-gray-400 cursor-not-allowed'
+            : isSelected
+            ? 'bg-blue-500 text-white'
+            : 'bg-gray-200 hover:bg-blue-200'
+        }`}
+      >
+        <p className="text-sm">{slot.time}</p>
+        {selectedDate && (
+          <p className="text-xs mt-1 text-black">
+            Tanggal: {selectedDate}
+          </p>
+        )}
+        <p
+          className={`text-xs ${
+            isBooked
+              ? 'text-red-600 font-semibold'
+              : 'text-green-600 font-semibold'
+          }`}
+        >
+          {slot.status}
+        </p>
+      </button>
+    );
+  })}
+</div>
+
+        <button
+          onClick={handleContinue}
+          className="w-full bg-gray-800 text-white px-4 py-3 rounded transition hover:bg-gray-700 active:scale-95"
+        >
+          Lanjutkan Pembayaran
+        </button>
       </div>
     </main>
   );

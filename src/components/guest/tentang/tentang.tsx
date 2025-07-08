@@ -17,7 +17,6 @@ export default function Tentang() {
           />
         </div>
 
-
         {/* Teks kanan */}
         <div>
           <h2 className="text-2xl font-bold mb-4">Tentang Donganta Billiard</h2>

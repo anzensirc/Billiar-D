@@ -5,18 +5,18 @@ import { useFormMutation } from "@/hooks/useFormMutation";
 import { useQuery } from "@tanstack/react-query";
 
 // get
-const getProduct = async (
+const getTutup = async (
   query?: string
-): Promise<ApiResponse<ProductResponse[]>> => {
+): Promise<ApiResponse<TutupResponse[]>> => {
   return await fetcher(
     query ? `infrastruktur/get?${query}` : `infrastruktur/get`
   );
 };
 
-export const useGetProduct = (query?: string) => {
-  return useQuery<ApiResponse<ProductResponse[]>, Error>(
-    ["useGetProduct", query],
-    () => getProduct(query),
+export const useGetTutup = (query?: string) => {
+  return useQuery<ApiResponse<TutupResponse[]>, Error>(
+    ["useGetTutup", query],
+    () => getTutup(query),
     {
       keepPreviousData: true,
       refetchIntervalInBackground: true,
@@ -25,21 +25,21 @@ export const useGetProduct = (query?: string) => {
 };
 
 // get by id
-export const getProductId = async (
+export const getTutupId = async (
   id: number
-): Promise<ApiResponse<DataObject<ProductResponse>>> => {
+): Promise<ApiResponse<DataObject<TutupResponse>>> => {
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetProductId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<ProductResponse>>, Error>(
-    ["useGetProductId", id],
-    () => getProductId(id)
+export const useGetTutupId = (id: number) => {
+  return useQuery<ApiResponse<DataObject<TutupResponse>>, Error>(
+    ["useGetTutupId", id],
+    () => getTutupId(id)
   );
 };
 
 // post
-export const useProduct = (method: "POST" | "PUT" = "POST", id?: number) => {
+export const useTutup = (method: "POST" | "PUT" = "POST", id?: number) => {
   return useFormMutation<
     ApiResponse<DataObject<ClosedForm>>,
     Error,

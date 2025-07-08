@@ -1,6 +1,6 @@
-interface ProductResponse {
+interface BookingResponse {
   id: number;
-  namapenerima: string;
+  namapemesan: string;
   nohp: string;
   tanggalbooking: string;
   tanggaltransaksi: string;

@@ -1,20 +1,20 @@
 // app/products/page.tsx atau sesuai path-mu
 "use client";
 
-import { mejaColumns, mejaData } from "@/components/parts/admin/kelolaMeja/column";
+import { transaksiColumns, transaksiData } from "@/components/parts/admin/riwayatTransaksi/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";
 import { useState } from "react";
 
-export default function MejaManajemenPage() {
+export default function RiwayatTransaksiPage() {
   const [page, setPage] = useState(1);
   const itemsPerPage = 5;
 
-  const totalItems = mejaData.length;
+  const totalItems = transaksiData.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const paginatedData = mejaData.slice(
+  const paginatedData = transaksiData.slice(
     (page - 1) * itemsPerPage,
     page * itemsPerPage
   );
@@ -24,17 +24,16 @@ export default function MejaManajemenPage() {
       <BreadcrumbSetItem
         items={[
           {
-            title: "Produk",
+            title: "Riwayat Transaksi",
           },
         ]}
       />
-      <h1 className="text-2xl font-bold mb-4">Daftar Produk</h1>
+      <h1 className="text-2xl font-bold mb-4">Riwayat Transaksi</h1>
       <div className="flex gap-2 items-center my-5">
         <Search name="search" />
-        <LinkButton title="Tambah Produk" link="/manajemen-meja/create" />
       </div>
       <DataTable
-        columns={mejaColumns}
+        columns={transaksiColumns}
         data={paginatedData}
         currentPage={page}
         totalItems={totalItems}

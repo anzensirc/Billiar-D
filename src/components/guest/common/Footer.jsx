@@ -5,25 +5,26 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-500 text-white-800 px-22 py-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-[570px_260px_260px] gap-10">
+    // Mengubah 'px-22' menjadi 'pl-[20px] pr-8'
+    <footer className="bg-blue-500 text-white-800 pl-[40px] pr-8 py-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 md:grid-cols-[570px_260px_260px] gap-5">
             {/* Kolom 1: Deskripsi */}
-         <div>
+          <div>
             <h2 className="font-bold mb-2">Joker-BilliarD</h2>
             <p className="text-sm">
-                Dongans Billiard bukan sekadar tempat main billiard—di sini kamu bisa nongkrong santai sambil nikmati kopi dan camilan lezat di warkop kami. Suasana nyaman, meja berkualitas, plus obrolan seru bareng teman. Mau latihan serius atau sekadar hangout? Semua bisa di Dongans Billiard!<br />
-                Bandar Lampung 35131, Lampung, Indonesia<br />
+                Dongans Billiard bukan sekadar tempat main billiard—di sini kamu bisa nongkrong santai sambil nikmati kopi dan camilan lezat di warkop kami. Suasana nyaman, meja berkualitas, plus obrolan seru bareng teman. Mau latihan serius atau sekadar hangout? Semua bisa di Dongans Billiard!<br/><br/>
+                Bandar Lampung 35131, Lampung, Indonesia<br/>
                 Telp +6281271589534<br />
                 Email: dongansbilliar@gmail.com<br />
                 Alamat: Jl. Pangeran Senopati Raya, jalur 2 Korpri Sukarame (Belakang RM Padang Airan)<br />
-                Buka Setiap Hari 12.00 - 02.00 WIB
+                Buka Setiap Hari 12.00 - 02.00 WIB<br/>
             </p>
         </div>
 
         {/* Kolom 2: Halaman Cepat */}
-        <div className="text-left">
-            <h3 className="font-bold mb-4">Halaman Cepat</h3>
-            <ul className="space-y-5 text-sm flex flex-col items-start">
+        <div className="text-left items-center">
+            <h3 className="font-bold mb-4 text-center">Halaman Cepat</h3>
+            <ul className="space-y-5 text-sm flex flex-col items-center">
                 <li><Link href="/dashboard">Beranda</Link></li>
                 <li><Link href="/booking">Booking</Link></li>
                 <li><Link href="/tentang">Tentang</Link></li>
@@ -36,7 +37,7 @@ export default function Footer() {
         <div className="flex justify-center gap-5">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <Image 
-                src="/icons/ikonfb.png" 
+                src="/icons/ikonfb1.png" 
                 alt="Facebook"
                 width={32} 
                 height={32}
@@ -45,7 +46,7 @@ export default function Footer() {
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <Image 
-                src="/icons/ikonig1.png" 
+                src="/icons/ikonig.png" 
                 alt="Instagram"
                 width={32} 
                 height={32}
@@ -72,7 +73,7 @@ export default function Footer() {
             </a>
         </div>
         </div>
-  </div>
+      </div>
 
         {/* Copyright */}
         <div className="border-t border-gray-400 mt-8 pt-1 text-sm text-center">
