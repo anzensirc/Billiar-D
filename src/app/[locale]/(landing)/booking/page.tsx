@@ -4,11 +4,13 @@ import Footer from "@/components/guest/common/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar /> {/* Fixed di atas, di luar main */}
+      {/* Fixed di atas, di luar main */}
       <main className="flex flex-col gap-20 pt-24">
+        <Navbar />
         <Booking />
+        <Footer/>
       </main>
-      <Footer/>
+      
     </>
   );
 }

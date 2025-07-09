@@ -25,7 +25,7 @@ export default function Payment() {
 };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <div className="max-w-4xl mx-auto px-4 pt-24 pb-10 space-y-8">
       <h2 className="text-xl font-semibold">Pembayaran</h2>
 
       {/* Customer Detail */}
@@ -38,7 +38,7 @@ export default function Payment() {
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full border rounded px-3 py-2"
+              className="w-full border rounded px-3 py-2 bg-white text-black"
               placeholder="Nama Lengkap"
             />
           </div>
@@ -48,7 +48,7 @@ export default function Payment() {
               type="text"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
-              className="w-full border rounded px-3 py-2"
+              className="w-full border rounded px-3 py-2 bg-white text-black"
               placeholder="No Whatsapp"
             />
           </div>
@@ -58,7 +58,7 @@ export default function Payment() {
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full border rounded px-3 py-2"
+              className="w-full border rounded px-3 py-2 bg-white text-black"
               placeholder="Alamat"
             />
           </div>
@@ -123,12 +123,27 @@ export default function Payment() {
             type="checkbox"
             checked={termsAccepted}
             onChange={() => setTermsAccepted(!termsAccepted)}
+            className="w-4 h-4 appreance-none border border-black bg-white  "
           />
           <label className="text-sm">
             Dengan melanjutkan ke pembayaran, Anda menyatakan telah membaca dan
             menyetujui seluruh syarat dan ketentuan di atas.
           </label>
         </div>
+        <div className="flex items-center space-x-2">
+  <input
+    type="checkbox"
+    checked={termsAccepted}
+    onChange={() => setTermsAccepted(!termsAccepted)}
+    // className="w-4 h-4 appearance-none border border-gray-400 bg-white checked:bg-blue-500 checked:border-transparent"
+    className="w-4 h-4 accent-white border border-gray-400"
+  />
+  <label className="text-sm">
+    Dengan melanjutkan ke pembayaran, Anda menyatakan telah membaca dan
+    menyetujui seluruh syarat dan ketentuan di atas.
+  </label>
+</div>
+
       </div>
 
       {/* Confirm Button */}

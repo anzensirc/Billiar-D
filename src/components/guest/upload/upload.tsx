@@ -20,31 +20,31 @@ export default function UploadBukti() {
       alert('Lengkapi kode booking dan upload bukti terlebih dahulu.');
       return;
     }
-
     // Lakukan upload ke backend di sini
     alert(`Bukti untuk booking ${bookingCode} telah dikirim!`);
   };
 
   return (
     <div className="w-full flex justify-center pt-[51px]">
-      <div className="w-full md:w-5/6 max-w-5xl mx-auto px-4 py-8 bg-gray-200 rounded-md space-y-6">
+      <div className="w-full md:w-4/6 max-w-5xl mx-auto px-10 py-8 bg-gray-300 rounded-md space-y-6">
         <h2 className="text-lg font-semibold">Upload Bukti Pembayaran</h2>
-
-        <div>
-          <label className="block text-sm mb-1">Kode Booking</label>
-          <input
-            type="text"
-            value={bookingCode}
-            onChange={(e) => setBookingCode(e.target.value)}
-            placeholder="Masukkan kode booking"
-            className="w-full border rounded px-3 py-2"
-          />
-        </div>
+          <div>
+            <label className="block text-sm mb-1">Kode Booking</label>
+            <input
+              type="text"
+              value={bookingCode}
+              onChange={(e) => setBookingCode(e.target.value)}
+              placeholder="Masukkan kode booking"
+              className="w-full border bg-white text-white-100 rounded px-3 py-2"
+              // className="w-full border bg-red-500 text-white-300 rounded px-3 py-2"
+              // className="w-full border border-blue-500 bg-gray-100 text-blue-900 rounded px-3 py-2"
+            />
+          </div>
 
         <div className="border rounded bg-white flex flex-col items-center justify-center py-8">
           {preview ? (
             <img
-              src={preview} alt="Preview" className="mb-4 max-h-80 object-contain"/>
+              src={preview} alt=" " className="mb-4 max-h-80 object-contain"/>
           ) : (
             <span className="text-gray-500 mb-4">Belum ada file dipilih</span>
           )}
@@ -62,7 +62,7 @@ export default function UploadBukti() {
         <div className="flex justify-end">
           <button
             onClick={handleSubmit}
-            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-300 transition"
+            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-blue-300 transition"
           >
             Kirim
           </button>

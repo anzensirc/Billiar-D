@@ -32,8 +32,8 @@ export default function Highlight() {
   ];
 
   return (
-    <main className="px-8 py-12">
-      <h1 className="text-2xl font-bold mb-8">Pilihan Meja Tersedia</h1>
+    <main className="px-20 py-28">
+      <h1 className="text-2xl font-bold mb-4">Pilihan Meja Tersedia</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {tables.map((table) => (
@@ -86,7 +86,7 @@ function TableCard({ table }: { table: Table }) {
 
       {/* Tombol Link Next.js */}
       <Link
-        href={`/dashboard/booking?category=${encodeURIComponent(table.category)}`}
+        href={`/booking?category=${encodeURIComponent(table.category)}`}
         className="bg-blue-500 hover:bg-green-500 text-white px-4 py-2 rounded mb-4 inline-block text-center"
       >
         Lihat Jadwal

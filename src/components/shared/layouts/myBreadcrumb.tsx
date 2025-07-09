@@ -64,7 +64,8 @@ export const MyBreadcrumb = () => {
   const { items } = useStore(myBreadcrumb);
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="w-full">
+    <div className="flex items-center justify-between w-full">
       <BreadcrumbList>
         {items.length === 0 ? (
           <>
@@ -99,6 +100,10 @@ export const MyBreadcrumb = () => {
           })
         )}
       </BreadcrumbList>
+      <div className="">
+        dfdfdf
+      </div>
+    </div>
     </Breadcrumb>
   );
 };

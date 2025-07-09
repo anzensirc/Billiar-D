@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Tentang() {
   return (
-    <section className="px-40 py-12 max-w-7xl mx-auto space-y-16">
+    <section className="px-28 py-8 max-w-7xl mx-auto space-y-16">
       {/* Bagian 1: Tentang Dongan */}
       <div className="grid md:grid-cols-2 gap-8 items-start">
         {/* Foto kiri */}
@@ -61,7 +61,6 @@ export default function Tentang() {
       {/* Bagian 2: Aktivitas */}
       <div>
         <h2 className="text-xl font-bold mb-10 text-center">Aktivitas</h2>
-        
         <div className="space-y-12">
           {/* 1. Turnamen */}
           <div className="md:flex md:items-start md:gap-8">
@@ -80,7 +79,6 @@ export default function Tentang() {
               className="mt-4 md:mt-0 rounded"
             />
           </div>
-
           {/* 2. Live Music */}
           <div className="md:flex md:items-start md:gap-8 md:flex-row-reverse">
             <div className="md:w-1/2">

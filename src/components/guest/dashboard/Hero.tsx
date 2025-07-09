@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[600px] mb-12 flex items-center justify-center text-center overflow-hidden">
+    <section className="relative w-full h-[718px] mb-12 flex items-center justify-center text-center overflow-hidden">
       {/* Video background */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-10 left-0 w-full h-full object-cover"
         src="/videos/backgroundhero.webm"
         autoPlay
         loop

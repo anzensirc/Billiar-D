@@ -6,10 +6,10 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     // Mengubah 'px-22' menjadi 'pl-[20px] pr-8'
-    <footer className="bg-blue-500 text-white-800 pl-[40px] pr-8 py-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-3 md:grid-cols-[570px_260px_260px] gap-5">
+    <footer className="bg-blue-500 text-white-800  flex justify-center flex-col">
+        <div className="px-20 py-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Kolom 1: Deskripsi */}
-          <div>
+          <div className=''>
             <h2 className="font-bold mb-2">Joker-BilliarD</h2>
             <p className="text-sm">
                 Dongans Billiard bukan sekadar tempat main billiard—di sini kamu bisa nongkrong santai sambil nikmati kopi dan camilan lezat di warkop kami. Suasana nyaman, meja berkualitas, plus obrolan seru bareng teman. Mau latihan serius atau sekadar hangout? Semua bisa di Dongans Billiard!<br/><br/>
@@ -76,7 +76,7 @@ export default function Footer() {
       </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-400 mt-8 pt-1 text-sm text-center">
+        <div className="border-t p-4 border-gray-400 mt-8 pt-1 text-sm text-center">
             <p>Hak Cipta Joker-BilliarD 2025</p>
             <p>Developed by Kuliah Praktek Teknik Informatika Institut Teknologi Sumatera</p>
         </div>
