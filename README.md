@@ -1,7 +1,3 @@
-# 🚀 Next.js 15.x Custom Template – Newus Boilerplate
-
-Welcome to the **Next.js 15** based project with internal customization from the Newus Technology team. This template uses the `pr-template-nextjs` boilerplate as the main foundation, developed to accelerate the development of modern, fast and scalable web applications.
-
 ---
 
 ## Project Structure
@@ -419,20 +415,3 @@ pnpm dev
 ```
 
 Accses your aplication on : [http://localhost:3000](http://localhost:3000)
-
----
-
-## Credits
-
-This template is setup by collaboration [@aldngrha](https://github.com/aldngrha/) and [@sakatimuna7](https://github.com/sakatimuna7/)
-
----
-
-## Contact
-
-📧 Email: newustechnology@gmail.com  
-🌐 Website: [newus.id](https://newus.id/)
-
----
-
-> Created with ❤️ by Team Newus Teknologi
