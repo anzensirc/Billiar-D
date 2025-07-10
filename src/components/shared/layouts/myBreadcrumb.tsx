@@ -101,7 +101,15 @@ export const MyBreadcrumb = () => {
         )}
       </BreadcrumbList>
       <div className="">
-        dfdfdf
+          <button
+            className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm"
+            onClick={() => {
+              // Aksi logout
+              console.log("Logout clicked");
+            }}
+          >
+            Logout
+          </button>
       </div>
     </div>
     </Breadcrumb>

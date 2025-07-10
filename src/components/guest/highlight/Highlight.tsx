@@ -62,13 +62,14 @@ function TableCard({ table }: { table: Table }) {
   return (
     <div className="bg-gray-100 rounded-lg shadow p-4 flex flex-col items-center relative">
       {/* Slider */}
+      <div className="w-full h-5 mb-4 overflow-hidden rounded">table.name</div>
       <div className="relative w-full h-80 mb-4 overflow-hidden rounded">
         <img
           src={table.images[currentIndex]}
           alt={table.name}
           className="w-full h-full object-cover"
         />
-
+        
         {/* Tombol panah */}
         <button
           onClick={prevImage}
@@ -76,6 +77,7 @@ function TableCard({ table }: { table: Table }) {
         >
           &#8592;
         </button>
+        <div className="w-full h-5 mb-4 overflow-hidden rounded">Meja Kecil</div>
         <button
           onClick={nextImage}
           className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white text-black rounded-full p-1 shadow"
