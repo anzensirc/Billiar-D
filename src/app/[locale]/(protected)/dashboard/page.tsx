@@ -28,9 +28,7 @@ export default function Page() {
           </button> */}
         </div>
       </div>
-
-      <HighlightDashboard />
-
+      <HighlightDashboard/>
       <div>
         pageeeee Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Consectetur aliquid quas, nulla quam dolores at? Unde, voluptates

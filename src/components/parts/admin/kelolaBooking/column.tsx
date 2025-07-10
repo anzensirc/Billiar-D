@@ -26,7 +26,7 @@ export const bookingData = [
   {
     id: 3,
     namapemesan: "Azizi",
-    nohp: "08123456789",
+    nohp: "0812345219",
     tanggalbooking: "2023-10-11",
     tanggaltransaksi: "2023-10-12",
     totalbayar: 150000,
@@ -58,11 +58,6 @@ export const bookingColumns: ColumnDef<BookingResponse>[] = [
     accessorKey: "tanggalbooking",
     header: "Tanggal Booking",
     cell: ({ row }) => row.original.tanggalbooking,
-  },
-  {
-    accessorKey: "tanggaltransaksi",
-    header: "Tanggal Transaksi",
-    cell: ({ row }) => row.original.tanggaltransaksi,
   },
   {
     accessorKey: "tanggaltransaksi",

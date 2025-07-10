@@ -21,7 +21,7 @@ export default function Highlight() {
       category: 'Meja Kecil',
       images: ['/images/mejakecil1.jpeg', '/images/mejakecil2.jpeg', '/images/mejakecil3.jpeg'],
     },
-    {
+    { 
       id: 2,
       name: 'Meja 2',
       description:

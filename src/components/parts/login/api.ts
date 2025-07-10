@@ -6,7 +6,7 @@ import { LoginPayload } from "./validation";
 export const useLoginMutation = () => {
   return useMutation<ApiResponse<DataObject<LoginData>>, Error, LoginPayload>({
     mutationFn: async (payload: LoginPayload) => {
-      return await sendData("login", payload, "POST");
+      return await sendData("auth/login", payload, "POST");
     },
   });
 };

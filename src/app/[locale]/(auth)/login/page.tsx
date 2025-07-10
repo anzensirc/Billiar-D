@@ -17,8 +17,10 @@ import Swal from "sweetalert2";
 import useShowErrors from "@/hooks/useShowErrors";
 import { Form } from "@/components/ui/form";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const t = useTranslations("auth");
 
   const form = useForm<LoginPayload>({
@@ -50,6 +52,7 @@ export default function LoginPage() {
           timerProgressBar: true,
           showConfirmButton: false,
         });
+        router.push("/dashboard");
       },
       onError: (error) =>
         Swal.fire({ icon: "error", title: "Gagal!", text: error.message }),

@@ -1,5 +1,5 @@
 import { NavItem } from "@/types";
-import { Grid, FileText, CalendarX, Upload, DockIcon, LayoutDashboard, Table2, BookOpenCheck, ScrollText} from "lucide-react";
+import { Grid, FileText, CalendarX, Upload, DockIcon, LayoutDashboard, Table2, BookOpenCheck, ScrollText, Target} from "lucide-react";
 export const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 export const REGION_URL = process.env.NEXT_PUBLIC_API_REGION;
 
@@ -53,7 +53,7 @@ export const getNavData = (): navDateType => {
       {
         title: "Kelola Meja",
         url: "/kelola-meja",
-        icon: Grid,
+        icon: Target,
         roles: ["admin", "superadmin", "user"],
       },
       {
