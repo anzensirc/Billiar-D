@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "22.x",
-    "pnpm": "6.35.1"
+    "pnpm": ">=9"
   },
   "engineStrict": true,
   "private": true,
