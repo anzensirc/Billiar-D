@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
 type Table = {
   id: number;
@@ -15,19 +15,26 @@ export default function Highlight() {
   const tables: Table[] = [
     {
       id: 1,
-      name: 'Meja 1',
+      name: "Meja 1",
       description:
-        'Meja Kecil cocok buat kamu yang mau main biliar santai bareng teman-teman terdekat...',
-      category: 'Meja Kecil',
-      images: ['/images/mejakecil1.jpeg', '/images/mejakecil2.jpeg', '/images/mejakecil3.jpeg'],
+        "Meja Kecil cocok buat kamu yang mau main biliar santai bareng teman-teman terdekat...",
+      category: "Meja Kecil",
+      images: [
+        "/images/mejakecil1.jpeg",
+        "/images/mejakecil2.jpeg",
+        "/images/mejakecil3.jpeg",
+      ],
     },
-    { 
+    {
       id: 2,
-      name: 'Meja 2',
-      description:
-        'Meja Besar hadir buat kamu yang suka tantangan serius!...',
-      category: 'Meja Besar',
-      images: ['/images/mejabesar1.jpeg', '/images/mejabesar2.jpeg', '/images/mejabesar3.jpeg'],
+      name: "Meja 2",
+      description: "Meja Besar hadir buat kamu yang suka tantangan serius!...",
+      category: "Meja Besar",
+      images: [
+        "/images/mejabesar1.jpeg",
+        "/images/mejabesar2.jpeg",
+        "/images/mejabesar3.jpeg",
+      ],
     },
   ];
 
@@ -69,7 +76,7 @@ function TableCard({ table }: { table: Table }) {
           alt={table.name}
           className="w-full h-full object-cover"
         />
-        
+
         {/* Tombol panah */}
         <button
           onClick={prevImage}
@@ -77,7 +84,9 @@ function TableCard({ table }: { table: Table }) {
         >
           &#8592;
         </button>
-        <div className="w-full h-5 mb-4 overflow-hidden rounded">Meja Kecil</div>
+        <div className="w-full h-5 mb-4 overflow-hidden rounded">
+          Meja Kecil
+        </div>
         <button
           onClick={nextImage}
           className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white text-black rounded-full p-1 shadow"

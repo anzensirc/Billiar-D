@@ -1,29 +1,29 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Banner() {
   const banners = [
-    '/images/banner1.png',
-    '/images/banner2.png',
-    '/images/banner3.png',
-  ]
+    "/images/banner1.png",
+    "/images/banner2.png",
+    "/images/banner3.png",
+  ];
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? banners.length - 1 : currentIndex - 1
-    setCurrentIndex(newIndex)
-  }
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? banners.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === banners.length - 1
-    const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  }
+    const isLastSlide = currentIndex === banners.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   return (
     <section className="relative w-full max-w-[1120px] h-[360px] mx-auto overflow-hidden">
@@ -57,11 +57,11 @@ export default function Banner() {
           <div
             key={index}
             className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? 'bg-white' : 'bg-gray-400'
+              index === currentIndex ? "bg-white" : "bg-gray-400"
             }`}
           ></div>
         ))}
       </div>
     </section>
-  )
+  );
 }

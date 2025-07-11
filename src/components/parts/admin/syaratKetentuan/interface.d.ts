@@ -2,6 +2,6 @@ type ISODateString = `${number}-${number}-${number}`;
 
 interface SyaratResponse {
   id: number;
-  syarat:string;
+  syarat: string;
   aksi: string;
 }

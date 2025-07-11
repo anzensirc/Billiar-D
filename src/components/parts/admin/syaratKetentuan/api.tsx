@@ -40,20 +40,17 @@ export const useGetSyaratId = (id: number) => {
 
 // post
 export const useSyarat = (method: "POST" | "PUT" = "POST", id?: number) => {
-  return useFormMutation<
-    ApiResponse<DataObject<TermForm>>,
-    Error,
-    TermForm
-  >({
-    mutationFn: async (
-      data
-    ): Promise<ApiResponse<DataObject<TermForm>>> => {
+  return useFormMutation<ApiResponse<DataObject<TermForm>>, Error, TermForm>({
+    mutationFn: async (data): Promise<ApiResponse<DataObject<TermForm>>> => {
       const endpoint = id
         ? `infrastruktur/${id}/update`
         : "infrastruktur/create";
       const delay = new Promise((resolve) => setTimeout(resolve, 2000));
-      const response: ApiResponse<DataObject<TermForm>> =
-        await sendData(endpoint, data, method);
+      const response: ApiResponse<DataObject<TermForm>> = await sendData(
+        endpoint,
+        data,
+        method
+      );
       await delay;
       return response;
     },

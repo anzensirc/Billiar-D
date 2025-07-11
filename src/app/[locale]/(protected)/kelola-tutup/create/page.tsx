@@ -1,8 +1,10 @@
 "use client";
 
-
 import { useTutup } from "@/components/parts/admin/kelolaTutup/api";
-import { ClosedForm, ClosedFormSchema } from "@/components/parts/admin/kelolaTutup/validation";
+import {
+  ClosedForm,
+  ClosedFormSchema,
+} from "@/components/parts/admin/kelolaTutup/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";
@@ -27,9 +29,9 @@ const CreateTutupPage = () => {
   const onSubmit = (data: ClosedForm) => {
     console.log("data", data);
     createTutupMutation.mutate(data, {
-        onSuccess: (data) => {
-            router.push("/data-master/category-business");
-        },
+      onSuccess: (data) => {
+        router.push("/data-master/category-business");
+      },
     });
   };
 

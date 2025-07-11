@@ -8,12 +8,12 @@ import {
 import { MoreVerticalIcon, Lock, Unlock } from "lucide-react";
 import Link from "next/link";
 import ModalDelete from "@/components/shared/modalDelete";
-import  Switch  from "@/components/ui/switch"; // Contoh pakai komponen switch kamu
+import Switch from "@/components/ui/switch"; // Contoh pakai komponen switch kamu
 
-  export const syaratData = [
-    {
-      id: 1,
-      syarat: `Reservasi hanya berlaku setelah pembayaran dikonfirmasi.
+export const syaratData = [
+  {
+    id: 1,
+    syarat: `Reservasi hanya berlaku setelah pembayaran dikonfirmasi.
   Harap datang minimal 10 menit sebelum waktu reservasi.
   Durasi permainan akan dihitung sesuai waktu yang telah dipesan.
   Dilarang duduk di atas meja billiard.
@@ -21,9 +21,9 @@ import  Switch  from "@/components/ui/switch"; // Contoh pakai komponen switch k
   Apabila terjadi kerusakan peralatan, pelanggan akan bertanggung jawab sesuai ketentuan yang berlaku.
   Pembayaran dilakukan secara online dan bersifat final.
   Tidak ada refund untuk pembatalan sepihak oleh pelanggan.
-  Jika ingin mengganti jadwal, harap hubungi pihak pengelola minimal 24 jam sebelumnya.`
-    }
-  ];
+  Jika ingin mengganti jadwal, harap hubungi pihak pengelola minimal 24 jam sebelumnya.`,
+  },
+];
 
 // export const syaratData = [
 //   {
@@ -57,14 +57,12 @@ export const syaratColumns: ColumnDef<any>[] = [
   //   cell: ({ row }) => row.original.syarat,
   // },
   {
-  accessorKey: "syarat",
-  header: "Syarat",
-  cell: ({ row }) => (
-    <div className="whitespace-pre-line">
-      {row.original.syarat}
-    </div>
-  ),
-},
+    accessorKey: "syarat",
+    header: "Syarat",
+    cell: ({ row }) => (
+      <div className="whitespace-pre-line">{row.original.syarat}</div>
+    ),
+  },
 
   {
     accessorKey: "aksi",

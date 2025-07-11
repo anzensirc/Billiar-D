@@ -1,7 +1,10 @@
 // app/products/page.tsx atau sesuai path-mu
 "use client";
 
-import { syaratColumns, syaratData } from "@/components/parts/admin/syaratKetentuan/column";
+import {
+  syaratColumns,
+  syaratData,
+} from "@/components/parts/admin/syaratKetentuan/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";
@@ -28,9 +31,11 @@ export default function MejaManajemenPage() {
           },
         ]}
       />
-      <h1 className="text-2xl font-bold mb-4">Pengaturan Syarat dan Ketentuan</h1>
+      <h1 className="text-2xl font-bold mb-4">
+        Pengaturan Syarat dan Ketentuan
+      </h1>
       <div className="flex gap-2 items-center my-5">
-        <Search name="search"/>
+        <Search name="search" />
       </div>
       <DataTable
         columns={syaratColumns}

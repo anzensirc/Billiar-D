@@ -1,7 +1,10 @@
 // app/products/page.tsx atau sesuai path-mu
 "use client";
 
-import { bookingColumns, bookingData } from "@/components/parts/admin/kelolaBooking/column";
+import {
+  bookingColumns,
+  bookingData,
+} from "@/components/parts/admin/kelolaBooking/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";

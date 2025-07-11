@@ -1,6 +1,6 @@
-import TableDemo, { Invoice } from "@/components/modal/TableDemo"
-import DownloadCsvButton from "@/components/modal/DownloadCsvButton"
-import DownloadPdfButton from "@/components/modal/DownloadPdfButton"
+import TableDemo, { Invoice } from "@/components/modal/TableDemo";
+import DownloadCsvButton from "@/components/modal/DownloadCsvButton";
+import DownloadPdfButton from "@/components/modal/DownloadPdfButton";
 
 const invoicesRaw = [
   {
@@ -24,18 +24,18 @@ const invoicesRaw = [
     subtotal: "$100.00",
     amount: "2",
   },
-]
+];
 
 // Kalkulasi totalAmount di sini
 const updatedInvoices: Invoice[] = invoicesRaw.map((inv) => {
-  const subtotal = parseFloat(inv.subtotal.replace("$", "").replace(",", ""))
-  const amount = parseFloat(inv.amount)
-  const total = subtotal * amount
+  const subtotal = parseFloat(inv.subtotal.replace("$", "").replace(",", ""));
+  const amount = parseFloat(inv.amount);
+  const total = subtotal * amount;
   return {
     ...inv,
     totalAmount: `$${total.toFixed(2)}`,
-  }
-})
+  };
+});
 
 export default function TableTesPage() {
   return (
@@ -47,5 +47,5 @@ export default function TableTesPage() {
       </div>
       <TableDemo data={updatedInvoices} />
     </div>
-  )
+  );
 }

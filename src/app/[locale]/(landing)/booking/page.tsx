@@ -8,9 +8,8 @@ export default function Home() {
       <main className="flex flex-col gap-20 pt-24">
         <Navbar />
         <Booking />
-        <Footer/>
+        <Footer />
       </main>
-      
     </>
   );
 }

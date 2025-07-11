@@ -1,5 +1,16 @@
 import { NavItem } from "@/types";
-import { Grid, FileText, CalendarX, Upload, DockIcon, LayoutDashboard, Table2, BookOpenCheck, ScrollText, Target} from "lucide-react";
+import {
+  Grid,
+  FileText,
+  CalendarX,
+  Upload,
+  DockIcon,
+  LayoutDashboard,
+  Table2,
+  BookOpenCheck,
+  ScrollText,
+  Target,
+} from "lucide-react";
 export const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 export const REGION_URL = process.env.NEXT_PUBLIC_API_REGION;
 
@@ -9,7 +20,7 @@ type navDateType = {
 
 export const getNavData = (): navDateType => {
   return {
-    navItems: [ 
+    navItems: [
       {
         title: "Dashboard",
         url: "/dashboard",
@@ -85,7 +96,7 @@ export const getNavData = (): navDateType => {
         url: "/syarat-ketentuan",
         icon: ScrollText,
         roles: ["admin", "superadmin", "user"],
-      }
+      },
     ],
   };
 };

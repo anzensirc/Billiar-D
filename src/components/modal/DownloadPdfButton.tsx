@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useCallback } from "react"
-import jsPDF from "jspdf"
-import autoTable from "jspdf-autotable"
-import { Invoice } from "./TableDemo"
+import { useCallback } from "react";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import { Invoice } from "./TableDemo";
 
 export default function DownloadPdfButton({ data }: { data: Invoice[] }) {
   const downloadPdf = useCallback(() => {
-    const doc = new jsPDF()
+    const doc = new jsPDF();
 
-    doc.text("Invoices", 14, 16)
+    doc.text("Invoices", 14, 16);
 
     autoTable(doc, {
       startY: 20,
@@ -22,10 +22,10 @@ export default function DownloadPdfButton({ data }: { data: Invoice[] }) {
         row.amount,
         row.totalAmount,
       ]),
-    })
+    });
 
-    doc.save("invoices.pdf")
-  }, [data])
+    doc.save("invoices.pdf");
+  }, [data]);
 
   return (
     <button
@@ -34,5 +34,5 @@ export default function DownloadPdfButton({ data }: { data: Invoice[] }) {
     >
       Download PDF
     </button>
-  )
+  );
 }

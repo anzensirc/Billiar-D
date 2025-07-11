@@ -1,7 +1,7 @@
-import Hero from '@/components/guest/dashboard/Hero'
-import Banner from '@/components/guest/dashboard/Banner'
-import Navbar from '@/components/guest/common/Navbar'
-import Footer from '@/components/guest/common/Footer'
+import Hero from "@/components/guest/dashboard/Hero";
+import Banner from "@/components/guest/dashboard/Banner";
+import Navbar from "@/components/guest/common/Navbar";
+import Footer from "@/components/guest/common/Footer";
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
       <Banner />
       <Footer />
     </main>
-  )
+  );
 }

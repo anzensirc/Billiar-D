@@ -40,20 +40,17 @@ export const useGetProductId = (id: number) => {
 
 // post
 export const useProduct = (method: "POST" | "PUT" = "POST", id?: number) => {
-  return useFormMutation<
-    ApiResponse<DataObject<MejaForm>>,
-    Error,
-    MejaForm
-  >({
-    mutationFn: async (
-      data
-    ): Promise<ApiResponse<DataObject<MejaForm>>> => {
+  return useFormMutation<ApiResponse<DataObject<MejaForm>>, Error, MejaForm>({
+    mutationFn: async (data): Promise<ApiResponse<DataObject<MejaForm>>> => {
       const endpoint = id
         ? `infrastruktur/${id}/update`
         : "infrastruktur/create";
       const delay = new Promise((resolve) => setTimeout(resolve, 2000));
-      const response: ApiResponse<DataObject<MejaForm>> =
-        await sendData(endpoint, data, method);
+      const response: ApiResponse<DataObject<MejaForm>> = await sendData(
+        endpoint,
+        data,
+        method
+      );
       await delay;
       return response;
     },

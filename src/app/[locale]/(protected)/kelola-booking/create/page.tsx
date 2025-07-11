@@ -1,8 +1,10 @@
 "use client";
 
-
 import { useBooking } from "@/components/parts/admin/kelolaBooking/api";
-import { BookingFormPayload, BookingFormSchema } from "@/components/parts/admin/kelolaBooking/validation";
+import {
+  BookingFormPayload,
+  BookingFormSchema,
+} from "@/components/parts/admin/kelolaBooking/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";
@@ -11,17 +13,17 @@ import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-  
+
 // name: z.string().min(1, { message: "Nama produk wajib diisi" }),
-  // phone: z.string().min(1, { message: "Nomor telepon wajib diisi" }),
-  // datebooking: z.string().min(1, { message: "Tanggal wajib diisi" }),
-  // datetransaction: z.string().min(1, { message: "Tanggal transaksi wajib diisi" }),
-  // totalpayment: z.number().min(1, { message: "Total bayar wajib diisi" }),
-  // status: z.string().min(1, { message: "Status wajib diisi" }),
-  // table: z.string().min(1, { message: "Meja wajib diisi" }),
-  // price: z.number().min(1, { message: "Harga wajib diisi" }),
-  // type: z.string().min(1, { message: "Tipe wajib diisi" }),
-  // description: z.string().min(1, { message: "Deskripsi wajib diisi" }),
+// phone: z.string().min(1, { message: "Nomor telepon wajib diisi" }),
+// datebooking: z.string().min(1, { message: "Tanggal wajib diisi" }),
+// datetransaction: z.string().min(1, { message: "Tanggal transaksi wajib diisi" }),
+// totalpayment: z.number().min(1, { message: "Total bayar wajib diisi" }),
+// status: z.string().min(1, { message: "Status wajib diisi" }),
+// table: z.string().min(1, { message: "Meja wajib diisi" }),
+// price: z.number().min(1, { message: "Harga wajib diisi" }),
+// type: z.string().min(1, { message: "Tipe wajib diisi" }),
+// description: z.string().min(1, { message: "Deskripsi wajib diisi" }),
 
 const CreateBookingPage = () => {
   const router = useRouter();
@@ -45,9 +47,9 @@ const CreateBookingPage = () => {
   const onSubmit = (data: BookingFormPayload) => {
     console.log("data", data);
     createBookingMutation.mutate(data, {
-        onSuccess: (data) => {
-            router.push("/data-master/category-business");
-        },
+      onSuccess: (data) => {
+        router.push("/data-master/category-business");
+      },
     });
   };
 

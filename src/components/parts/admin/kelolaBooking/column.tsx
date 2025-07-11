@@ -35,7 +35,7 @@ export const bookingData = [
     harga: 150000,
     tipe: "Meja",
     deskripsi: "Meja untuk 4 orang",
-  }
+  },
 ];
 
 export const bookingColumns: ColumnDef<BookingResponse>[] = [
@@ -89,7 +89,7 @@ export const bookingColumns: ColumnDef<BookingResponse>[] = [
   {
     accessorKey: "tipe",
     header: "Tipe",
-   cell: ({ row }) => row.original.tipe,
+    cell: ({ row }) => row.original.tipe,
   },
   {
     accessorKey: "deskripsi",

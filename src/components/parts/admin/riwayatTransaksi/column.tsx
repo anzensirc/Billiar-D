@@ -51,7 +51,7 @@ export const transaksiColumns: ColumnDef<TransactionResponse>[] = [
   {
     accessorKey: "tanggal_booking",
     header: "Tipe",
-   cell: ({ row }) => row.original.tanggal_booking,
+    cell: ({ row }) => row.original.tanggal_booking,
   },
   {
     accessorKey: "tanggal_transaksi",
@@ -67,5 +67,5 @@ export const transaksiColumns: ColumnDef<TransactionResponse>[] = [
     accessorKey: "status_pembayaran",
     header: "Status Pembayaran",
     cell: ({ row }) => row.original.status_pembayaran,
-  }
+  },
 ];

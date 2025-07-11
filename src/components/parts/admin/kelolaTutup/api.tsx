@@ -45,15 +45,16 @@ export const useTutup = (method: "POST" | "PUT" = "POST", id?: number) => {
     Error,
     ClosedForm
   >({
-    mutationFn: async (
-      data
-    ): Promise<ApiResponse<DataObject<ClosedForm>>> => {
+    mutationFn: async (data): Promise<ApiResponse<DataObject<ClosedForm>>> => {
       const endpoint = id
         ? `infrastruktur/${id}/update`
         : "infrastruktur/create";
       const delay = new Promise((resolve) => setTimeout(resolve, 2000));
-      const response: ApiResponse<DataObject<ClosedForm>> =
-        await sendData(endpoint, data, method);
+      const response: ApiResponse<DataObject<ClosedForm>> = await sendData(
+        endpoint,
+        data,
+        method
+      );
       await delay;
       return response;
     },

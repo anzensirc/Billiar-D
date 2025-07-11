@@ -1,13 +1,19 @@
-'use client'
+"use client";
 
-import { X } from 'lucide-react'
-import Link from 'next/link'
+import { X } from "lucide-react";
+import Link from "next/link";
 
-export default function CartSidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export default function CartSidebar({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
   return (
     <div
       className={`fixed top-0 right-0 h-full w-80 bg-gray-100 shadow-lg p-4 z-50 transform transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
+        isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       {/* Tombol Close */}
@@ -25,7 +31,9 @@ export default function CartSidebar({ isOpen, onClose }: { isOpen: boolean; onCl
           <p>Meja No. 1</p>
           <p>26-Juni-2025 10.00 - 11.00</p>
           <p>Rp20.000</p>
-          <button className="text-xs mt-2 px-2 py-1 bg-gray-200 rounded">Hapus</button>
+          <button className="text-xs mt-2 px-2 py-1 bg-gray-200 rounded">
+            Hapus
+          </button>
         </div>
 
         <div className="p-4 border rounded shadow-sm">
@@ -33,7 +41,9 @@ export default function CartSidebar({ isOpen, onClose }: { isOpen: boolean; onCl
           <p>Meja No. 1</p>
           <p>26-Juni-2025 12.00 - 13.00</p>
           <p>Rp20.000</p>
-          <button className="text-xs mt-2 px-2 py-1 bg-gray-200 rounded">Hapus</button>
+          <button className="text-xs mt-2 px-2 py-1 bg-gray-200 rounded">
+            Hapus
+          </button>
         </div>
       </div>
 
@@ -43,7 +53,6 @@ export default function CartSidebar({ isOpen, onClose }: { isOpen: boolean; onCl
           Lanjutkan Pembayaran
         </button>
       </Link>
-
-      </div>
-  )
+    </div>
+  );
 }

@@ -39,7 +39,10 @@ export const useGetTutupId = (id: number) => {
 };
 
 // post
-export const useTransaction = (method: "POST" | "PUT" = "POST", id?: number) => {
+export const useTransaction = (
+  method: "POST" | "PUT" = "POST",
+  id?: number
+) => {
   return useFormMutation<
     ApiResponse<DataObject<TransactionForm>>,
     Error,
@@ -52,8 +55,11 @@ export const useTransaction = (method: "POST" | "PUT" = "POST", id?: number) => 
         ? `infrastruktur/${id}/update`
         : "infrastruktur/create";
       const delay = new Promise((resolve) => setTimeout(resolve, 2000));
-      const response: ApiResponse<DataObject<TransactionForm>> =
-        await sendData(endpoint, data, method);
+      const response: ApiResponse<DataObject<TransactionForm>> = await sendData(
+        endpoint,
+        data,
+        method
+      );
       await delay;
       return response;
     },

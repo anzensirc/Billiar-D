@@ -1,28 +1,30 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 export default function Payment() {
   const router = useRouter();
-  const [fullName, setFullName] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [address, setAddress] = useState('');
+  const [fullName, setFullName] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [address, setAddress] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
   const handlePaymentConfirmation = () => {
-    const isChecked = confirm('Apakah Anda yakin ingin melanjutkan ke pembayaran?');
+    const isChecked = confirm(
+      "Apakah Anda yakin ingin melanjutkan ke pembayaran?"
+    );
     if (!isChecked) return;
     if (!termsAccepted) {
-      alert('Anda harus menyetujui syarat & ketentuan terlebih dahulu.');
+      alert("Anda harus menyetujui syarat & ketentuan terlebih dahulu.");
       return;
     }
-    if(!fullName || !whatsapp || !address) {
-      alert('Harap lengkapi semua detail customer sebelum melanjutkan.');
+    if (!fullName || !whatsapp || !address) {
+      alert("Harap lengkapi semua detail customer sebelum melanjutkan.");
       return;
     }
-    alert('Pembayaran dikonfirmasi!');
-    router.push('/payment/detail');    
-};
+    alert("Pembayaran dikonfirmasi!");
+    router.push("/payment/detail");
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 pt-24 pb-10 space-y-8">
@@ -87,24 +89,34 @@ export default function Payment() {
 
       {/* Terms & Conditions */}
       <div className="border rounded-lg p-4 space-y-4">
-        <h3 className="font-semibold">✅ Syarat & Ketentuan Reservasi Billiard</h3>
+        <h3 className="font-semibold">
+          ✅ Syarat & Ketentuan Reservasi Billiard
+        </h3>
         <div className="space-y-2 text-sm">
           <p>
-            Sebelum melanjutkan ke pembayaran, harap membaca dan menyetujui syarat & ketentuan berikut:
+            Sebelum melanjutkan ke pembayaran, harap membaca dan menyetujui
+            syarat & ketentuan berikut:
           </p>
           <div>
             <p className="font-semibold">📌 Ketentuan Umum</p>
             <ol className="list-decimal ml-5 space-y-1">
-              <li>Reservasi hanya berlaku setelah pembayaran dikonfirmasi...</li>
+              <li>
+                Reservasi hanya berlaku setelah pembayaran dikonfirmasi...
+              </li>
               <li>Harap datang minimal 10 menit sebelum waktu reservasi...</li>
-              <li>Durasi permainan akan dihitung sesuai waktu yang telah dipesan...</li>
+              <li>
+                Durasi permainan akan dihitung sesuai waktu yang telah
+                dipesan...
+              </li>
             </ol>
           </div>
           <div>
             <p className="font-semibold">🚫 Peraturan Penting di Lokasi</p>
             <ol className="list-decimal ml-5 space-y-1">
               <li>Dilarang duduk di atas meja billiard...</li>
-              <li>Dilarang meletakkan atau benda panas di atas meja billiard...</li>
+              <li>
+                Dilarang meletakkan atau benda panas di atas meja billiard...
+              </li>
               <li>Apabila terjadi kerusakan peralatan...</li>
             </ol>
           </div>
@@ -131,25 +143,25 @@ export default function Payment() {
           </label>
         </div>
         <div className="flex items-center space-x-2">
-  <input
-    type="checkbox"
-    checked={termsAccepted}
-    onChange={() => setTermsAccepted(!termsAccepted)}
-    // className="w-4 h-4 appearance-none border border-gray-400 bg-white checked:bg-blue-500 checked:border-transparent"
-    className="w-4 h-4 accent-white border border-gray-400"
-  />
-  <label className="text-sm">
-    Dengan melanjutkan ke pembayaran, Anda menyatakan telah membaca dan
-    menyetujui seluruh syarat dan ketentuan di atas.
-  </label>
-</div>
-
+          <input
+            type="checkbox"
+            checked={termsAccepted}
+            onChange={() => setTermsAccepted(!termsAccepted)}
+            // className="w-4 h-4 appearance-none border border-gray-400 bg-white checked:bg-blue-500 checked:border-transparent"
+            className="w-4 h-4 accent-white border border-gray-400"
+          />
+          <label className="text-sm">
+            Dengan melanjutkan ke pembayaran, Anda menyatakan telah membaca dan
+            menyetujui seluruh syarat dan ketentuan di atas.
+          </label>
+        </div>
       </div>
 
       {/* Confirm Button */}
       <button
         onClick={handlePaymentConfirmation}
-        className="w-full bg-gray-800 text-white py-3 rounded hover:bg-gray-700 transition">
+        className="w-full bg-gray-800 text-white py-3 rounded hover:bg-gray-700 transition"
+      >
         Konfirmasi Pembayaran
       </button>
     </div>

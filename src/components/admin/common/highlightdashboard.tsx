@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ArrowUpRight,
@@ -7,7 +7,7 @@ import {
   DollarSign,
   Calendar,
   X,
-} from 'lucide-react';
+} from "lucide-react";
 
 import {
   LineChart,
@@ -17,61 +17,61 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 // Dummy stats
 const stats = [
   {
-    title: 'Total Booking',
-    value: '300',
+    title: "Total Booking",
+    value: "300",
     icon: <ShoppingCart className="w-6 h-6 text-green-500" />,
-    change: '+0.43%',
-    changeColor: 'text-green-500',
+    change: "+0.43%",
+    changeColor: "text-green-500",
     arrow: <ArrowUpRight className="w-4 h-4 text-green-500" />,
   },
   {
-    title: 'Total Profit',
-    value: 'Rp 420.000.000,00',
+    title: "Total Profit",
+    value: "Rp 420.000.000,00",
     icon: <DollarSign className="w-6 h-6 text-orange-400" />,
-    change: '+3249,19%',
-    changeColor: 'text-green-500',
+    change: "+3249,19%",
+    changeColor: "text-green-500",
     arrow: <ArrowUpRight className="w-4 h-4 text-green-500" />,
   },
   {
-    title: 'Total Meja',
-    value: '4',
+    title: "Total Meja",
+    value: "4",
     icon: <Target className="w-6 h-6 text-purple-500" />,
-    change: '+0%',
-    changeColor: 'text-green-500',
+    change: "+0%",
+    changeColor: "text-green-500",
     arrow: <ArrowUpRight className="w-4 h-4 text-green-500" />,
   },
 ];
 
 // Dummy chart data
 const chartData = [
-  { name: 'Jan', booking: 30, revenue: 40000000 },
-  { name: 'Feb', booking: 45, revenue: 55000000 },
-  { name: 'Mar', booking: 60, revenue: 80000000 },
-  { name: 'Apr', booking: 50, revenue: 75000000 },
-  { name: 'May', booking: 70, revenue: 100000000 },
-  { name: 'Jun', booking: 80, revenue: 120000000 },
-  { name: 'Jul', booking: 90, revenue: 140000000 },
+  { name: "Jan", booking: 30, revenue: 40000000 },
+  { name: "Feb", booking: 45, revenue: 55000000 },
+  { name: "Mar", booking: 60, revenue: 80000000 },
+  { name: "Apr", booking: 50, revenue: 75000000 },
+  { name: "May", booking: 70, revenue: 100000000 },
+  { name: "Jun", booking: 80, revenue: 120000000 },
+  { name: "Jul", booking: 90, revenue: 140000000 },
 ];
 
 const filterOptions = [
-  '3 Hari Terakhir',
-  '7 Hari Terakhir',
-  '2 Minggu Terakhir',
-  '1 Bulan Terakhir',
-  '1 Tahun Terakhir',
-  'All Time',
-  'Custom Range',
+  "3 Hari Terakhir",
+  "7 Hari Terakhir",
+  "2 Minggu Terakhir",
+  "1 Bulan Terakhir",
+  "1 Tahun Terakhir",
+  "All Time",
+  "Custom Range",
 ];
 
 export default function HighlightDashboard() {
-  const [selectedFilter, setSelectedFilter] = useState('7 Hari Terakhir');
+  const [selectedFilter, setSelectedFilter] = useState("7 Hari Terakhir");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -169,9 +169,11 @@ export default function HighlightDashboard() {
               ))}
             </div>
 
-            {selectedFilter === 'Custom Range' && (
+            {selectedFilter === "Custom Range" && (
               <div className="mt-4">
-                <p className="text-sm text-gray-600 mb-2">Date range picker placeholder</p>
+                <p className="text-sm text-gray-600 mb-2">
+                  Date range picker placeholder
+                </p>
                 {/* Bisa diisi react-datepicker nanti */}
                 <div className="p-4 border rounded bg-gray-50 text-center text-gray-500">
                   [Date Range Picker Here]

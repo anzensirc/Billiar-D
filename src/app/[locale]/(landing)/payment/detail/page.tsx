@@ -1,6 +1,6 @@
-import Navbar from "@/components/guest/common/Navbar"
-import PaymentDetail from "@/components/guest/payment/paymentdetail"
-import UploadBukti from "@/components/guest/upload/upload"
+import Navbar from "@/components/guest/common/Navbar";
+import PaymentDetail from "@/components/guest/payment/paymentdetail";
+import UploadBukti from "@/components/guest/upload/upload";
 export default function Home() {
   return (
     <div>

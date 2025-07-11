@@ -65,42 +65,42 @@ export const MyBreadcrumb = () => {
 
   return (
     <Breadcrumb className="w-full">
-    <div className="flex items-center justify-between w-full">
-      <BreadcrumbList>
-        {items.length === 0 ? (
-          <>
-            {[1, 2, 3].map((_, i) => (
-              <React.Fragment key={i}>
-                <BreadcrumbItem>
-                  <span className="block w-24 h-4 bg-gray-300 rounded animate-pulse" />
-                </BreadcrumbItem>
-                {i !== 2 && <BreadcrumbSeparator>{`/`}</BreadcrumbSeparator>}
-              </React.Fragment>
-            ))}
-          </>
-        ) : (
-          items.map((item, i) => {
-            const isLast = i === items.length - 1;
-            return (
-              <React.Fragment key={i}>
-                <BreadcrumbItem>
-                  {isLast ? (
-                    <BreadcrumbPage>{item.title}</BreadcrumbPage>
-                  ) : item.href && item.href !== "#" ? (
-                    <BreadcrumbLink asChild>
-                      <Link href={item.href}>{item.title}</Link>
-                    </BreadcrumbLink>
-                  ) : (
-                    <BreadcrumbPage>{item.title}</BreadcrumbPage>
-                  )}
-                </BreadcrumbItem>
-                {!isLast && <BreadcrumbSeparator>{`/`}</BreadcrumbSeparator>}
-              </React.Fragment>
-            );
-          })
-        )}
-      </BreadcrumbList>
-      <div className="">
+      <div className="flex items-center justify-between w-full">
+        <BreadcrumbList>
+          {items.length === 0 ? (
+            <>
+              {[1, 2, 3].map((_, i) => (
+                <React.Fragment key={i}>
+                  <BreadcrumbItem>
+                    <span className="block w-24 h-4 bg-gray-300 rounded animate-pulse" />
+                  </BreadcrumbItem>
+                  {i !== 2 && <BreadcrumbSeparator>{`/`}</BreadcrumbSeparator>}
+                </React.Fragment>
+              ))}
+            </>
+          ) : (
+            items.map((item, i) => {
+              const isLast = i === items.length - 1;
+              return (
+                <React.Fragment key={i}>
+                  <BreadcrumbItem>
+                    {isLast ? (
+                      <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                    ) : item.href && item.href !== "#" ? (
+                      <BreadcrumbLink asChild>
+                        <Link href={item.href}>{item.title}</Link>
+                      </BreadcrumbLink>
+                    ) : (
+                      <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                    )}
+                  </BreadcrumbItem>
+                  {!isLast && <BreadcrumbSeparator>{`/`}</BreadcrumbSeparator>}
+                </React.Fragment>
+              );
+            })
+          )}
+        </BreadcrumbList>
+        <div className="">
           <button
             className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm"
             onClick={() => {
@@ -110,8 +110,8 @@ export const MyBreadcrumb = () => {
           >
             Logout
           </button>
+        </div>
       </div>
-    </div>
     </Breadcrumb>
   );
 };

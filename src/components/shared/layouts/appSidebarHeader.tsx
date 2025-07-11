@@ -15,14 +15,13 @@ export default function AppSidebarHeader() {
           width={open ? 70 : 30}
           height={open ? 70 : 30}
         />
-        
       </div>
       {open && (
         <div className="flex flex-col">
-          <p className="font-semibold text-sidebar-foreground">Dongan&apos;s BilliarD</p>
-          <p className="text-xs text-sidebar-foreground/70">
-            Reservasi Online
+          <p className="font-semibold text-sidebar-foreground">
+            Dongan&apos;s BilliarD
           </p>
+          <p className="text-xs text-sidebar-foreground/70">Reservasi Online</p>
         </div>
       )}
     </div>

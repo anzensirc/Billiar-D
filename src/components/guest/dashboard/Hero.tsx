@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -21,11 +21,13 @@ export default function Hero() {
       {/* Konten hero */}
       <div className="relative z-10 px-4 text-white">
         <h1 className="text-4xl font-bold mb-10">
-          Selamat Datang Di<br />Dongans Billiard
+          Selamat Datang Di
+          <br />
+          Dongans Billiard
         </h1>
         <p className="max-w-xl mx-auto mb-10">
-          Nikmati pengalaman bermain billiard terbaik dengan meja berkualitas premium, suasana nyaman,
-          dan pelayanan profesional.
+          Nikmati pengalaman bermain billiard terbaik dengan meja berkualitas
+          premium, suasana nyaman, dan pelayanan profesional.
         </p>
         <div className="flex gap-4 justify-center">
           {/* Link Button 1 */}
@@ -43,5 +45,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

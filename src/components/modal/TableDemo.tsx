@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Table,
@@ -9,21 +9,21 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 export interface Invoice {
-  invoice: string
-  paymentStatus: string
-  paymentMethod: string
-  subtotal: string
-  amount: string
-  totalAmount: string
+  invoice: string;
+  paymentStatus: string;
+  paymentMethod: string;
+  subtotal: string;
+  amount: string;
+  totalAmount: string;
 }
 
 export default function TableDemo({ data }: { data: Invoice[] }) {
   const grandTotal = data.reduce((sum, inv) => {
-    return sum + parseFloat(inv.totalAmount.replace("$", "").replace(",", ""))
-  }, 0)
+    return sum + parseFloat(inv.totalAmount.replace("$", "").replace(",", ""));
+  }, 0);
 
   return (
     <Table>
@@ -57,5 +57,5 @@ export default function TableDemo({ data }: { data: Invoice[] }) {
         </TableRow>
       </TableFooter>
     </Table>
-  )
+  );
 }

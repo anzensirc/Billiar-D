@@ -1,9 +1,9 @@
-'use client';
-import { Copy } from 'lucide-react';
+"use client";
+import { Copy } from "lucide-react";
 const bookingCode = "TRX123456";
 const handleCopy = () => {
   navigator.clipboard.writeText(bookingCode);
-    // Optionally: show toast / alert
+  // Optionally: show toast / alert
 };
 export default function PaymentDetail() {
   return (
@@ -13,24 +13,24 @@ export default function PaymentDetail() {
       <div className="grid md:grid-cols-2 gap-10">
         {/* Transaction Info */}
         <div className="space-y-4">
-      <div>
-        <label className="block text-sm mb-1">Kode Booking</label>
-        
-        <div className="flex">
-          <input
-            type="text"
-            value={bookingCode}
-            readOnly
-            className="w-full border rounded-l px-3 py-2 bg-gray-100"
-          />
-          <button
-            onClick={handleCopy}
-            className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
-          >
-            <Copy className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
+          <div>
+            <label className="block text-sm mb-1">Kode Booking</label>
+
+            <div className="flex">
+              <input
+                type="text"
+                value={bookingCode}
+                readOnly
+                className="w-full border rounded-l px-3 py-2 bg-gray-100"
+              />
+              <button
+                onClick={handleCopy}
+                className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
+              >
+                <Copy className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
 
           <div>
             <label className="block text-sm">Nama Pemesan</label>
@@ -51,7 +51,9 @@ export default function PaymentDetail() {
             />
           </div>
           <div>
-            <label className="block text-sm">Batas Akhir Waktu Pembayaran</label>
+            <label className="block text-sm">
+              Batas Akhir Waktu Pembayaran
+            </label>
             <input
               type="text"
               value="02-07-2025 23:59"

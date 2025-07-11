@@ -8,7 +8,7 @@ import {
 import { MoreVerticalIcon, Lock, Unlock } from "lucide-react";
 import Link from "next/link";
 import ModalDelete from "@/components/shared/modalDelete";
-import  Switch  from "@/components/ui/switch"; // Contoh pakai komponen switch kamu
+import Switch from "@/components/ui/switch"; // Contoh pakai komponen switch kamu
 
 export const tutupData = [
   {
@@ -16,7 +16,8 @@ export const tutupData = [
     tanggalmulai: "2023-12-25",
     tanggalselesai: "2023-12-26",
     keterangan: "Libur Natal 2 Hari", // tambahkan properti statusTutup
-  },{
+  },
+  {
     id: 2,
     tanggalmulai: "2023-01-01",
     tanggalselesai: "2023-01-02",
@@ -27,7 +28,7 @@ export const tutupData = [
     tanggalmulai: "2023-04-12",
     tanggalselesai: "2023-05-12",
     keterangan: "Libur Ramadhan 1 Bulanan Bro", // tambahkan properti statusTutup
-  }
+  },
 ];
 
 export const tutupColumns: ColumnDef<any>[] = [

@@ -39,7 +39,7 @@ export const mejaColumns: ColumnDef<ProductResponse>[] = [
   {
     accessorKey: "tipe",
     header: "Tipe",
-   cell: ({ row }) => row.original.tipe,
+    cell: ({ row }) => row.original.tipe,
   },
   {
     accessorKey: "deskripsi",
