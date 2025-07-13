@@ -1,10 +1,10 @@
 "use client";
 
-import { useTutup } from "@/components/parts/admin/kelolaTutup/api";
+import { useTutup } from "@/components/parts/admin/kelola-tutup/api";
 import {
   ClosedForm,
   ClosedFormSchema,
-} from "@/components/parts/admin/kelolaTutup/validation";
+} from "@/components/parts/admin/kelola-tutup/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";

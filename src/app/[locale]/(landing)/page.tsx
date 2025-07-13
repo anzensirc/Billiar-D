@@ -1,7 +1,7 @@
-import Hero from "@/components/guest/dashboard/Hero";
-import Banner from "@/components/guest/dashboard/Banner";
-import Navbar from "@/components/guest/common/Navbar";
-import Footer from "@/components/guest/common/Footer";
+import Hero from "@/components/guest/dashboard/hero";
+import Banner from "@/components/guest/dashboard/banner";
+import Navbar from "@/components/guest/common/navbar";
+import Footer from "@/components/guest/common/footer";
 
 export default function Home() {
   return (

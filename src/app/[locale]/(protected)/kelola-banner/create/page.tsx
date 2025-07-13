@@ -3,8 +3,8 @@
 import {
   ProductFormPayload,
   productFormSchema,
-} from "@/components/parts/admin/kelolaBanner/validation";
-import { useProduct } from "@/components/parts/admin/kelolaMeja/api";
+} from "@/components/parts/admin/kelola-banner/validation";
+import { useProduct } from "@/components/parts/admin/kelola-meja/api";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";

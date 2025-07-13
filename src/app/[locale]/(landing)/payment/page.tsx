@@ -1,4 +1,4 @@
-import Navbar from "@/components/guest/common/Navbar";
+import Navbar from "@/components/guest/common/navbar";
 import Payment from "@/components/guest/payment/payment";
 
 export default function Home() {

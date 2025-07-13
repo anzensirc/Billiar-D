@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
-import { Invoice } from "./TableDemo";
+import { Invoice } from "./tableDemo";
 
 export default function DownloadCsvButton({ data }: { data: Invoice[] }) {
   const downloadCsv = useCallback(() => {

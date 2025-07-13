@@ -1,7 +1,7 @@
 import React from "react";
 import Tentang from "@/components/guest/tentang/tentang";
-import Footer from "@/components/guest/common/Footer";
-import Navbar from "@/components/guest/common/Navbar";
+import Footer from "@/components/guest/common/footer";
+import Navbar from "@/components/guest/common/navbar";
 export default function Home() {
   return (
     <>

@@ -1,6 +1,6 @@
-import Navbar from "@/components/guest/common/Navbar";
+import Navbar from "@/components/guest/common/navbar";
 import Highlight from "@/components/guest/highlight/Highlight";
-import Footer from "@/components/guest/common/Footer";
+import Footer from "@/components/guest/common/footer";
 export default function Home() {
   return (
     <>

@@ -1,4 +1,4 @@
-import Navbar from "@/components/guest/common/Navbar";
+import Navbar from "@/components/guest/common/navbar";
 import PaymentDetail from "@/components/guest/payment/paymentdetail";
 import UploadBukti from "@/components/guest/upload/upload";
 export default function Home() {

@@ -1,10 +1,10 @@
 "use client";
 
-import { useBooking } from "@/components/parts/admin/kelolaBooking/api";
+import { useBooking } from "@/components/parts/admin/kelola-booking/api";
 import {
   BookingFormPayload,
   BookingFormSchema,
-} from "@/components/parts/admin/kelolaBooking/validation";
+} from "@/components/parts/admin/kelola-booking/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";

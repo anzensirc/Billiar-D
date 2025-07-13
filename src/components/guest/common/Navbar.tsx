@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ShoppingCart, Menu } from "lucide-react";
-import CartSidebar from "@/components/modal/CartSidebar";
+import CartSidebar from "@/components/modal/cartSidebar";
 
 export default function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);

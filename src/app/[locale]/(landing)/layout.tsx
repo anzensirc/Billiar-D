@@ -1,5 +1,5 @@
 // app/landing/dashboard/layout.tsx
-import Footer from "@/components/guest/common/Footer";
+import Footer from "@/components/guest/common/footer";
 
 export default function DashboardLayout({
   children,

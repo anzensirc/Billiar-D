@@ -4,7 +4,7 @@
 import {
   bookingColumns,
   bookingData,
-} from "@/components/parts/admin/kelolaBooking/column";
+} from "@/components/parts/admin/kelola-booking/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";

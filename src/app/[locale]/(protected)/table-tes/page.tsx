@@ -1,6 +1,6 @@
-import TableDemo, { Invoice } from "@/components/modal/TableDemo";
-import DownloadCsvButton from "@/components/modal/DownloadCsvButton";
-import DownloadPdfButton from "@/components/modal/DownloadPdfButton";
+import TableDemo, { Invoice } from "@/components/modal/tableDemo";
+import DownloadCsvButton from "@/components/modal/downloadCsvButton";
+import DownloadPdfButton from "@/components/modal/downloadPdfButton";
 
 const invoicesRaw = [
   {

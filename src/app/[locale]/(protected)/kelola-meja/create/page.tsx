@@ -1,10 +1,10 @@
 "use client";
 
-import { useProduct } from "@/components/parts/admin/kelolaMeja/api";
+import { useProduct } from "@/components/parts/admin/kelola-meja/api";
 import {
   MejaForm,
   MejaFormSchema,
-} from "@/components/parts/admin/kelolaMeja/validation";
+} from "@/components/parts/admin/kelola-meja/validation";
 import { CustomFormInput } from "@/components/shared/forms/customFormInput";
 import { CustomFormSelect } from "@/components/shared/forms/customFormSelect";
 import { BreadcrumbSetItem } from "@/components/shared/layouts/myBreadcrumb";

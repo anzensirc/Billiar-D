@@ -3,7 +3,7 @@
 import { useCallback } from "react";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import { Invoice } from "./TableDemo";
+import { Invoice } from "./tableDemo";
 
 export default function DownloadPdfButton({ data }: { data: Invoice[] }) {
   const downloadPdf = useCallback(() => {

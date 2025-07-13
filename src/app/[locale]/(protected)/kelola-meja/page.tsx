@@ -4,7 +4,7 @@
 import {
   mejaColumns,
   mejaData,
-} from "@/components/parts/admin/kelolaMeja/column";
+} from "@/components/parts/admin/kelola-meja/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";

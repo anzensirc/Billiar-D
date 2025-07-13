@@ -4,7 +4,7 @@
 import {
   transaksiColumns,
   transaksiData,
-} from "@/components/parts/admin/riwayatTransaksi/column";
+} from "@/components/parts/admin/riwayat-transaksi/column";
 import LinkButton from "@/components/shared/button/linkButton";
 import DataTable from "@/components/shared/dataTable";
 import Search from "@/components/shared/filter/search";
