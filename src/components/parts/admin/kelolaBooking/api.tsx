@@ -13,16 +13,16 @@ const getBooking = async (
   );
 };
 
-export const useGetBooking = (query?: string) => {
-  return useQuery<ApiResponse<BookingResponse[]>, Error>(
-    ["useGetBooking", query],
-    () => getBooking(query),
-    {
-      keepPreviousData: true,
-      refetchIntervalInBackground: true,
-    }
-  );
-};
+// export const useGetBooking = (query?: string) => {
+//   return useQuery<ApiResponse<BookingResponse[]>, Error>(
+//     ["useGetBooking", query],
+//     () => getBooking(query),
+//     {
+//       keepPreviousData: true,
+//       refetchIntervalInBackground: true,
+//     }
+//   );
+// };
 
 // get by id
 export const getBookingId = async (
@@ -31,12 +31,12 @@ export const getBookingId = async (
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetBookingId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<BookingResponse>>, Error>(
-    ["useGetBookingId", id],
-    () => getBookingId(id)
-  );
-};
+// export const useGetBookingId = (id: number) => {
+//   return useQuery<ApiResponse<DataObject<BookingResponse>>, Error>(
+//     ["useGetBookingId", id],
+//     () => getBookingId(id)
+//   );
+// };
 
 // post
 export const useBooking = (method: "POST" | "PUT" = "POST", id?: number) => {

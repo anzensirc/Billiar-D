@@ -13,16 +13,16 @@ const getTutup = async (
   );
 };
 
-export const useGetTutup = (query?: string) => {
-  return useQuery<ApiResponse<TutupResponse[]>, Error>(
-    ["useGetTutup", query],
-    () => getTutup(query),
-    {
-      keepPreviousData: true,
-      refetchIntervalInBackground: true,
-    }
-  );
-};
+// export const useGetTutup = (query?: string) => {
+//   return useQuery<ApiResponse<TutupResponse[]>, Error>(
+//     ["useGetTutup", query],
+//     () => getTutup(query),
+//     {
+//       keepPreviousData: true,
+//       refetchIntervalInBackground: true,
+//     }
+//   );
+// };
 
 // get by id
 export const getTutupId = async (
@@ -31,12 +31,12 @@ export const getTutupId = async (
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetTutupId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<TutupResponse>>, Error>(
-    ["useGetTutupId", id],
-    () => getTutupId(id)
-  );
-};
+// export const useGetTutupId = (id: number) => {
+//   return useQuery<ApiResponse<DataObject<TutupResponse>>, Error>(
+//     ["useGetTutupId", id],
+//     () => getTutupId(id)
+//   );
+// };
 
 // post
 export const useTransaction = (

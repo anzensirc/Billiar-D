@@ -13,16 +13,16 @@ const getProduct = async (
   );
 };
 
-export const useGetProduct = (query?: string) => {
-  return useQuery<ApiResponse<ProductResponse[]>, Error>(
-    ["useGetProduct", query],
-    () => getProduct(query),
-    {
-      keepPreviousData: true,
-      refetchIntervalInBackground: true,
-    }
-  );
-};
+// export const useGetProduct = (query?: string) => {
+//   return useQuery<ApiResponse<ProductResponse[]>, Error>(
+//     ["useGetProduct", query],
+//     () => getProduct(query),
+//     {
+//       keepPreviousData: true,
+//       refetchIntervalInBackground: true,
+//     }
+//   );
+// };
 
 // get by id
 export const getProductId = async (
@@ -31,12 +31,12 @@ export const getProductId = async (
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetProductId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<ProductResponse>>, Error>(
-    ["useGetProductId", id],
-    () => getProductId(id)
-  );
-};
+// export const useGetProductId = (id: number) => {
+//   return useQuery<ApiResponse<DataObject<ProductResponse>>, Error>(
+//     ["useGetProductId", id],
+//     () => getProductId(id)
+//   );
+// };
 
 // post
 export const useProduct = (method: "POST" | "PUT" = "POST", id?: number) => {

@@ -13,16 +13,16 @@ const getSyarat = async (
   );
 };
 
-export const useGetSyarat = (query?: string) => {
-  return useQuery<ApiResponse<SyaratResponse[]>, Error>(
-    ["useGetSyarat", query],
-    () => getSyarat(query),
-    {
-      keepPreviousData: true,
-      refetchIntervalInBackground: true,
-    }
-  );
-};
+// export const useGetSyarat = (query?: string) => {
+//   return useQuery<ApiResponse<SyaratResponse[]>, Error>(
+//     ["useGetSyarat", query],
+//     () => getSyarat(query),
+//     {
+//       keepPreviousData: true,
+//       refetchIntervalInBackground: true,
+//     }
+//   );
+// };
 
 // get by id
 export const getSyaratId = async (
@@ -31,12 +31,12 @@ export const getSyaratId = async (
   return await fetcher(`infrastruktur/${id}/get`);
 };
 
-export const useGetSyaratId = (id: number) => {
-  return useQuery<ApiResponse<DataObject<SyaratResponse>>, Error>(
-    ["useGetSyaratId", id],
-    () => getSyaratId(id)
-  );
-};
+// export const useGetSyaratId = (id: number) => {
+//   return useQuery<ApiResponse<DataObject<SyaratResponse>>, Error>(
+//     ["useGetSyaratId", id],
+//     () => getSyaratId(id)
+//   );
+// };
 
 // post
 export const useSyarat = (method: "POST" | "PUT" = "POST", id?: number) => {

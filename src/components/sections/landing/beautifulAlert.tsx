@@ -2,7 +2,7 @@
 
 import { useMyAlertDialog } from "@/components/shared/customAlertDialog";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function BeautifulAlert() {
   const alert = useMyAlertDialog();
@@ -122,7 +122,7 @@ export default function BeautifulAlert() {
     });
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hover: {
       scale: 1.05,
       y: -2,

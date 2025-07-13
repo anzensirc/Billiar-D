@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { create } from "zustand";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import {
   CheckCircle,
   XCircle,
@@ -264,7 +264,7 @@ export function MyAlertDialog() {
   const colorScheme = getColorScheme();
 
   // Advanced animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {
       scale: 0.8,
       opacity: 0,
@@ -275,7 +275,7 @@ export function MyAlertDialog() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 30,
         duration: 0.5,
@@ -303,7 +303,7 @@ export function MyAlertDialog() {
       rotate: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 15,
         delay: 0.2,
@@ -322,7 +322,7 @@ export function MyAlertDialog() {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 20,
       },
